@@ -1,0 +1,16 @@
+server:
+  port: 7200
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/tg_robot?characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: a123bc
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+
+mybatis:
+  check-config-location: true
+  # mapper-locations: classpath:mybatis/mapper/**/*.xml
+  # config-location: classpath:mybatis/mybatis-config.xml
