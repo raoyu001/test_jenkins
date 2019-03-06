@@ -1,8 +1,10 @@
+package com.test.jenkins;
+
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@MapperScan(basePackages = "com.test.jenkins.dao")
+@MapperScan("com.test.jenkins.dao")
 @SpringBootApplication(scanBasePackages = "com.test.jenkins")
 public class TestJenkinsApplication {
 

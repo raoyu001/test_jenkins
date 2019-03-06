@@ -1,4 +1,4 @@
-package com.test.jenkins.web;
+package com.test.jenkins.web.controller;
 
 import com.test.jenkins.biz.DemoService;
 import org.springframework.web.bind.annotation.RequestMapping;
