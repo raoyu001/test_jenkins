@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.raoyu.test.jenkins</groupId>
+    <groupId>com.test.jenkins</groupId>
     <artifactId>test_jenkins</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
@@ -163,12 +163,6 @@
         </dependency>
 
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql-connector.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>${druid.version}</version>
@@ -184,11 +178,6 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.rholder</groupId>
-            <artifactId>guava-retrying</artifactId>
-            <version>${guava-retry.version}</version>
         </dependency>
 
         <!--orika-->
@@ -320,50 +309,24 @@
                     </includes>
                 </configuration>
             </plugin>
-
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.test.jenkins.TestJenkinsApplication</mainClass>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
     <profiles>
         <profile>
-            <id>dev</id>
+            <id>qa</id>
             <properties>
-                <environment>dev</environment>
-                <spring.profiles.active>dev</spring.profiles.active>
+                <environment>qa</environment>
+                <spring.profiles.active>qa</spring.profiles.active>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
         </profile>
         <profile>
-            <id>qa</id>
-            <properties>
-                <environment>qa</environment>
-            </properties>
-        </profile>
-        <profile>
-            <id>pre</id>
-            <properties>
-                <environment>pre</environment>
-            </properties>
-        </profile>
-        <profile>
             <id>prod</id>
             <properties>
                 <environment>prod</environment>
+                <spring.profiles.active>prod</spring.profiles.active>
             </properties>
         </profile>
     </profiles>
