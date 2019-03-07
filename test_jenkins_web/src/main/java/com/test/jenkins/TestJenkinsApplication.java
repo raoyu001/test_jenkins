@@ -10,8 +10,7 @@ public class TestJenkinsApplication {
 
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(TestJenkinsApplication.class);
-
-
+        
         app.run(args);
     }
 }
