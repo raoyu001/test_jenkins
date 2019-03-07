@@ -25,6 +25,7 @@
     </dependencies>
 
     <build>
+        <finalName>test_jenkins.jar</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
