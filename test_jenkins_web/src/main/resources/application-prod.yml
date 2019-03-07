@@ -3,3 +3,4 @@ spring:
     url: jdbc:mysql://rm-bp1ij577ggsf0ft35ro.mysql.rds.aliyuncs.com/tg_robot?characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull
     username: root
     password: Bzt168168
+    driver-class-name: com.mysql.jdbc.Driver

@@ -2,11 +2,8 @@ server:
   port: 7200
 
 spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/tg_robot?characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull
-    username: root
-    password: a123bc
+  profiles:
+    active: @environment@
   jpa:
     show-sql: true
 
@@ -14,3 +11,4 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/**/*.xml
   # config-location: classpath:mybatis/mybatis-config.xml
   check-config-location: true
+

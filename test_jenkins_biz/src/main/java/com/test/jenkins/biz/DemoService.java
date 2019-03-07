@@ -14,7 +14,7 @@ public class DemoService {
     private DemoMapper demoMapper;
 
     public String demo(){
-        log.info("获取的数量,{}",demoMapper.count());
+        log.info("get count,{}",demoMapper.count());
         return "hello world";
     }
 }
