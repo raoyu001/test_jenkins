@@ -1,10 +1,12 @@
 package com.test.jenkins.web.controller;
 
 import com.alipay.api.domain.Product;
+import com.github.raoyu001.hello.HelloService;
 import com.test.jenkins.biz.DemoService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.server.HandlerFunction;
@@ -31,6 +33,9 @@ public class DemoController {
     @Resource
     private DemoService demoService;
 
+    @Resource
+    private HelloService helloService;
+
     @RequestMapping("/1")
     public String demo1() {
         return demoService.demo();
@@ -39,6 +44,11 @@ public class DemoController {
     @RequestMapping("/2")
     public Mono<String> demo2() {
         return Mono.just("reactive programming");
+    }
+
+    @RequestMapping("/hello/{name}")
+    public Mono<String> hello(@PathVariable String name) {
+        return Mono.just(helloService.sayHello(name));
     }
 
     @RequestMapping("/curTime")
